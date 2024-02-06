@@ -24,24 +24,27 @@ const MessageParser = ({ children, actions }) => {
           axios.post(url, payload, { headers })
             .then(response => {
 
-              const msg =response.data.map((data)=> data.payload.message + ". ").concat()
-              console.log(msg)
+              const msg =response.data.map((data)=> {
+                console.log(data,"data")
+                if(data.type ==="speak"){
+                  console.log("speak")
+                  return data.payload.message + ". "
+                }else if(data.type === "end"){
+                  console.log("end")
+                  return "Thanks for the interaction"
+                }else if(data.type === "path"){
+                  console.log("path")
+                  return " "
+                }
+                else{
+                  
+                  return "somthing went wrong"
+                }
+              }).concat()
+              console.log(msg,"message")
               
               actions.handleHello(msg)
-              // for(let i=0;i<response.data.length;i++){
-              //   const element = response.data[i]
-              //   console.log(element)
-              //   console.log(element.type)
-              //   if(element.type === "speak"){
-              //       // setTimeout(()=>{
-              //       //   actions.handleHello(element.payload.message);
-              //       // },Math.random() * 100)
-              //      actions.handleHello(element.payload.message);
-              //   }else if(element.type === "end"){
-              //     actions.handleHello("Thanks your interaction!")
-              //   }
-              // }
-              
+
               // response.data.forEach(element => {
               //     console.log(element)
               //     console.log(element.type)
