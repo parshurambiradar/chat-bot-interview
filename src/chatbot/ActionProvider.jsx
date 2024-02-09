@@ -1,11 +1,14 @@
 // in ActionProvider.jsx
 import React from 'react';
+import { useSpeechSynthesis } from 'react-speech-kit';
+
 
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
+  const { speak } = useSpeechSynthesis();
   const handleHello = (message) => {
-    
-    
+
+    speak({text:message})
     const botMessage = createChatBotMessage(message);
 
     setState((prev) => ({

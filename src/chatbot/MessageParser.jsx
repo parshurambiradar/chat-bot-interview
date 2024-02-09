@@ -3,10 +3,13 @@ import React from 'react';
 import axios from 'axios';
 
 
+
+
 const random5DigitNumber = Math.floor(10000 + Math.random() * 90000);
 const url = `https://general-runtime.voiceflow.com/state/user/userabc${random5DigitNumber}/interact`;
 
 const MessageParser = ({ children, actions }) => {
+
   const parse = (message) => {
     if (message) {
         const headers = {
@@ -42,7 +45,6 @@ const MessageParser = ({ children, actions }) => {
                 }
               }).concat()
               console.log(msg,"message")
-              
               actions.handleHello(msg)
 
               // response.data.forEach(element => {
