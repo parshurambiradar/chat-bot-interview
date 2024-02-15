@@ -1,14 +1,25 @@
 // in ActionProvider.jsx
 import React from 'react';
-import { useSpeechSynthesis } from 'react-speech-kit';
+import useAudioStore from '../store';
 
 
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
-  const { speak } = useSpeechSynthesis();
+  const { setSpeaking } = useAudioStore();
   const handleHello = (message) => {
-
-    speak({text:message})
+    //setBlob(message)
+    const utterance = new SpeechSynthesisUtterance(message);
+    utterance.onstart  = function(event) {
+      console.log("Speech synthesis started.");
+      setSpeaking(true)
+    };
+    
+    utterance.onend =function(event) {
+      console.log("Speech synthesis ended.");
+      setSpeaking(false)
+    };
+    console.log(utterance)
+    speechSynthesis.speak(utterance);
     const botMessage = createChatBotMessage(message);
 
     setState((prev) => ({

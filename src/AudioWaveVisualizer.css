@@ -1,0 +1,120 @@
+/* AudioWaveVisualizer.css */
+.audio-wave-container {
+    display: flex;
+    position: relative;
+    right: 100px;
+    top: 10px;
+    justify-content: center;
+    align-items: flex-end;
+    height: 20px; /* Adjust as needed */
+  }
+  
+  .audio-wave-bar1{
+    width: 4px;
+    height: 5px; /* Adjust as needed */
+    background-color: #007bff; /* Adjust color as needed */
+    margin: 0 2px; /* Adjust margin as needed */
+    animation: wave1 0.5s infinite alternate;
+  }
+  .audio-wave-bar2{
+    width: 4px;
+    height: 5px; /* Adjust as needed */
+    background-color: #007bff; /* Adjust color as needed */
+    margin: 0 2px; /* Adjust margin as needed */
+    animation: wave2 0.5s infinite alternate;
+  }
+
+  .audio-wave-bar3{
+    width: 4px;
+    height: 5px; /* Adjust as needed */
+    background-color: #007bff; /* Adjust color as needed */
+    margin: 0 2px; /* Adjust margin as needed */
+    animation: wave3 0.5s infinite alternate;
+  }
+
+  .audio-wave-bar4{
+    width: 4px;
+    height: 5px; /* Adjust as needed */
+    background-color: #007bff; /* Adjust color as needed */
+    margin: 0 2px; /* Adjust margin as needed */
+    animation: wave4 0.5s infinite alternate;
+  }
+
+
+
+  .audio-wave-bar {
+    width: 4px;
+    height: 5px; /* Adjust as needed */
+    background-color: #007bff; /* Adjust color as needed */
+    margin: 0 2px; /* Adjust margin as needed */
+    animation: wave 0.5s infinite alternate;
+  }
+  
+  @keyframes wave1 {
+    0% {
+      height: 3px;
+    }
+    50% {
+      height: 5px; /* Adjust maximum height as needed */
+    }
+    100% {
+      height: 20px;
+    }
+  }
+  
+  @keyframes wave2 {
+    0% {
+      height: 10px;
+    }
+    50% {
+      height: 20px; /* Adjust maximum height as needed */
+    }
+    100% {
+      height: 5px;
+    }
+  }
+
+  @keyframes wave3 {
+    0% {
+      height: 20px;
+    }
+    50% {
+      height: 10px; /* Adjust maximum height as needed */
+    }
+    100% {
+      height: 5px;
+    }
+  }
+
+  @keyframes wave4 {
+    0% {
+      height: 20px;
+    }
+    50% {
+      height: 5px; /* Adjust maximum height as needed */
+    }
+    100% {
+      height: 10px;
+    }
+  }
+  
+  
+
+
+
+
+  @keyframes wave {
+    0% {
+      height: 10px;
+    }
+    50% {
+      height: 20px; /* Adjust maximum height as needed */
+    }
+    100% {
+      height: 5px;
+    }
+  }
+  
+
+
+  
